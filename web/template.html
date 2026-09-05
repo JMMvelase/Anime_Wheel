@@ -60,6 +60,9 @@ input.name:focus{border-color:var(--gold)}
 .artcard{position:absolute;inset:0;display:grid;place-items:center;padding:22px;animation:pop .3s ease-out}
 .artcard svg{width:min(100%,500px);height:auto;filter:drop-shadow(0 16px 40px rgba(0,0,0,.45))}
 @keyframes pop{from{transform:scale(.93);opacity:0}}
+.chip-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.timer{font-size:13px;font-weight:900;letter-spacing:2px;min-height:15px;color:var(--gold);font-variant-numeric:tabular-nums}
+.timer.low{color:var(--coral)}
 .chip{font-size:11px;font-weight:900;letter-spacing:2px;min-height:15px}
 .prompt{font-size:20px;font-weight:800;line-height:1.4;margin:6px 0 6px;white-space:pre-line}
 .sub{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.5px;min-height:17px;display:flex;align-items:center;gap:8px}
@@ -89,9 +92,54 @@ input.name:focus{border-color:var(--gold)}
 .brow .bp{margin-left:auto;font-size:18px;font-weight:900;color:var(--mint)}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
 .fadein{animation:pop .3s ease-out}
+/* ==== NEON ANIME ARCADE ==== */
+#bgfx{position:fixed;inset:0;z-index:0;pointer-events:none}
+#bgfx::before{content:'';position:absolute;inset:0;
+	background-image:
+	 radial-gradient(1px 1px at 20px 30px,rgba(255,255,255,.9),transparent),
+	 radial-gradient(1px 1px at 40px 70px,rgba(255,255,255,.55),transparent),
+	 radial-gradient(1.5px 1.5px at 50px 160px,rgba(125,167,255,.85),transparent),
+	 radial-gradient(1px 1px at 90px 40px,rgba(255,113,91,.7),transparent),
+	 radial-gradient(1.5px 1.5px at 130px 80px,rgba(244,201,93,.8),transparent),
+	 radial-gradient(1px 1px at 160px 120px,rgba(255,255,255,.5),transparent),
+	 radial-gradient(1px 1px at 200px 60px,rgba(255,93,143,.7),transparent),
+	 radial-gradient(1.5px 1.5px at 240px 180px,rgba(125,167,255,.6),transparent),
+	 radial-gradient(1px 1px at 280px 110px,rgba(255,255,255,.85),transparent),
+	 radial-gradient(1px 1px at 320px 210px,rgba(244,201,93,.6),transparent);
+	background-repeat:repeat;
+	background-size:420px 300px;
+	animation:starDrift 160s linear infinite,twinkle 9s ease-in-out infinite}
+#bgfx::after{content:'';position:absolute;inset:0;
+	background:radial-gradient(900px 520px at 12% 8%,rgba(125,167,255,.10),transparent 60%),
+	 radial-gradient(820px 520px at 88% 92%,rgba(255,113,91,.08),transparent 60%),
+	 radial-gradient(640px 420px at 70% 18%,rgba(244,201,93,.06),transparent 60%)}
+@keyframes starDrift{to{background-position:420px 300px}}
+@keyframes twinkle{0%,100%{opacity:.85}50%{opacity:1}}
+#app{position:relative;z-index:1}
+.logo{filter:drop-shadow(0 0 16px rgba(255,113,91,.35)) drop-shadow(0 0 42px rgba(244,201,93,.16))}
+.logo-sub{font-size:12px;letter-spacing:7px;color:var(--gold);font-weight:800;opacity:.92;text-shadow:0 0 12px rgba(244,201,93,.5);margin-bottom:4px}
+.mini-logo{filter:drop-shadow(0 0 12px rgba(255,113,91,.4))}
+.card,.winner-wrap{animation:bounceIn .5s cubic-bezier(.19,1.4,.34,1)}
+@keyframes bounceIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.chip{text-shadow:0 0 12px currentColor}
+.timer{text-shadow:0 0 10px currentColor}
+.timer.low{animation:buzz .5s steps(2,end) infinite}
+@keyframes buzz{50%{opacity:.35}}
+.status{text-shadow:0 0 14px currentColor}
+.prompt{text-shadow:0 0 22px rgba(127,167,255,.15)}
+.choice:not(:disabled):hover{box-shadow:0 0 0 1px var(--gold),0 0 18px rgba(244,201,93,.25)}
+.choice.sel{box-shadow:0 0 0 1px rgba(244,201,93,.6),0 0 22px rgba(244,201,93,.3)}
+.choice.ok{box-shadow:0 0 0 1px rgba(103,216,176,.6),0 0 22px rgba(103,216,176,.3)}
+.choice.bad{box-shadow:0 0 0 1px rgba(255,113,91,.6),0 0 22px rgba(255,113,91,.3)}
+.btn-primary{box-shadow:0 10px 26px rgba(255,113,91,.25),0 0 26px rgba(255,113,91,.25)}
+.stepper button:hover,input.name:focus{box-shadow:0 0 0 1px var(--gold),0 0 16px rgba(244,201,93,.3)}
+.stage.hot{border-color:var(--coral);box-shadow:0 0 0 1px var(--coral),0 0 34px rgba(255,113,91,.28)}
+.final-title{filter:drop-shadow(0 0 26px rgba(255,113,91,.4))}
+.soundbtn:hover{box-shadow:0 0 0 1px var(--gold),0 0 14px rgba(244,201,93,.25)}
 </style>
 </head>
 <body>
+<div id="bgfx"></div>
 <div id="app"></div>
 <canvas id="confetti" hidden></canvas>
 <script>
@@ -219,7 +267,7 @@ function emblemSVG(q,mode){
 		?`<g transform="translate(${cx-95},${cy-95}) scale(1.9)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="color:${c2}">${ICONS[iconName]}</g>`
 		:`<text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central" font-family="Segoe UI Symbol,Yu Gothic,Arial" font-size="128" font-weight="900" fill="${c2}">${escapeHtml(q.symbol)}</text>`;
 	const caption=mode==='pick'
-		?`<text x="210" y="408" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" letter-spacing="2" font-weight="800" fill="#8b93a7">${q.kind==='anime'?'MYSTERY SERIES — NO HINTS HIDDEN IN THE ART!':'WHAT DOES THIS EMBLEM BELONG TO?'}</text>`:'';
+		?`<text x="210" y="408" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" letter-spacing="2" font-weight="800" fill="#8b93a7">${q.kind==='anime'?'MYSTERY SERIES — NO HINTS HIDDEN IN THE ART!':q.kind==='who'?"WHO'S THAT CHARACTER? — NO HINTS!":q.kind==='fact'?'THIS SERIES IS THE SUBJECT OF THE TRIVIA':'WHAT DOES THIS EMBLEM BELONG TO?'}</text>`:'';
 	return `<svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
 	<circle cx="${cx}" cy="${cy}" r="${outer}" fill="${shade(c1,.55)}" stroke="${c2}" stroke-width="3"/>
 	${ticks}
@@ -230,6 +278,9 @@ function emblemSVG(q,mode){
 }
 
 function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// "Who's That Character?" uses the neutral emblem (no silhouettes).
+
 
 const ICONS={
 	strawhat:'<ellipse cx="50" cy="62" rx="36" ry="11"/><path d="M25 60c1-18 10-27 25-27s24 9 25 27"/><line x1="29" y1="51" x2="71" y2="51" stroke-width="9"/>',
@@ -296,12 +347,14 @@ function iconInner(name){return ICONS[name]||'';}
 const S={
 	teamCount:2,rounds:10,names:[],
 	teams:[],scores:[],cur:0,roundNo:0,total:10,
-	q:null,qIdx:null,targetSeg:null,deck:[],phase:'setup',selected:null,segQ:[]
+	q:null,qIdx:null,targetSeg:null,deck:[],phase:'setup',selected:null,segQ:[],timeLeft:0,timerHandle:null
 };
 
-const HEADERS={line:'WHO SAID IT?',character:'GUESS THE CHARACTER',symbol:'SYMBOL ROUND',tech:'NAME THAT MOVE',anime:'NAME THAT SERIES'};
-const EMBLEM_KINDS={symbol:1,anime:1};
+const HEADERS={line:'WHO SAID IT?',character:'GUESS THE CHARACTER',symbol:'SYMBOL ROUND',tech:'NAME THAT MOVE',anime:'NAME THAT SERIES',who:"WHO'S THAT CHARACTER?",fact:'TRIVIA TIME'};
+const TIME_LIMIT=20;
+const EMBLEM_KINDS={symbol:1,anime:1,fact:1};
 const NEUTRAL=['#2b2b3d','#8f97b5'];
+const HIDDEN= {anime:1, who:1};
 
 function usedSet(){
 	try{return new Set(JSON.parse(localStorage.getItem('aw_used')||'[]'));}
@@ -331,9 +384,9 @@ function markUsed(idx){
 	saveUsed(u);
 }
 function artFor(q,mode){
-	return EMBLEM_KINDS[q.kind]
-		?emblemSVG(q.kind==='anime'?Object.assign({},q,{colors:NEUTRAL,symbol:'?'}):q,mode)
-		:avatarSVG(q,mode);
+	if(q.kind==='anime'||q.kind==='who')
+		return emblemSVG(Object.assign({},q,{colors:NEUTRAL,symbol:'?'}),mode);
+	return EMBLEM_KINDS[q.kind]?emblemSVG(q,mode):avatarSVG(q,mode);
 }
 
 function loadSettings(){
@@ -352,11 +405,13 @@ loadSettings();
 function dot(color,cls){return h('span',{class:cls||'dot',style:'background:'+color});}
 
 function renderSetup(){
+	stopTimer();
 	document.body.removeAttribute('data-error');
 	S.phase='setup';
 	app.innerHTML='';
 	const defaults=DATA.defaultTeams;
 	const wrap=h('div',{class:'fadein'});
+	wrap.append(h('div',{class:'logo-sub'},'アニメ・ホイール'));
 	wrap.append(h('div',{class:'logo'},'ANIME WHEEL'));
 	wrap.append(h('div',{class:'tagline'},`SPIN • GUESS • SCORE — ${DATA.questions.length} CHALLENGES ACROSS ${new Set(DATA.questions.map(q=>q.anime)).size} SHOWS`));
 	const card=h('div',{class:'card'});
@@ -478,8 +533,11 @@ function renderGame(){
 	stage.append(art);
 	main.append(stage);
 	const rc=h('div');
+	const chipRow=h('div',{class:'chip-row'});
 	const chip=h('div',{class:'chip'});chip.id='chip';
-	rc.append(chip);
+	const timerEl=h('div',{class:'timer'});timerEl.id='timer';
+	chipRow.append(chip,timerEl);
+	rc.append(chipRow);
 	const pr=h('div',{class:'prompt'});pr.id='prompt';
 	const sub=h('div',{class:'sub'});sub.id='sub';
 	rc.append(pr,sub);
@@ -549,9 +607,13 @@ function drawWheel(cv,rot,hubGlyph){
 	ctx.arc(cx,cy,hr,0,Math.PI*2);
 	ctx.fillStyle='#171b26';
 	ctx.fill();
+	ctx.save();
+	ctx.shadowColor=GOLD;
+	ctx.shadowBlur=16;
 	ctx.strokeStyle=GOLD;
 	ctx.lineWidth=3;
 	ctx.stroke();
+	ctx.restore();
 	ctx.beginPath();
 	ctx.arc(cx,cy,hr*(S.pulse?.86:.78),0,Math.PI*2);
 	ctx.fillStyle='#222839';
@@ -581,6 +643,8 @@ function setAction(text,ready){
 }
 function nextRound(){
 	stopConfetti();
+	stopTimer();
+	$('#stage').classList.remove('hot');
 	if(S.roundNo>=S.total){showWinner();return;}
 	S.roundNo++;
 	S.phase='spin';
@@ -648,6 +712,7 @@ function spinWheel(){
 
 function showQuestion(){
 	S.phase='pick';
+	$('#stage').classList.add('hot');
 	const q=S.q;
 	if(S.qIdx!=null)markUsed(S.qIdx);
 	const tier=DATA.tiers[q.tier];
@@ -659,7 +724,7 @@ function showQuestion(){
 	$('#chip').textContent=`${tier.name} • +${tier.pts} POINT${tier.pts>1?'S':''}`;
 	$('#chip').style.color=tier.color;
 	$('#prompt').textContent=(HEADERS[q.kind]||'SYMBOL ROUND')+'\n'+q.prompt;
-	if(q.kind==='anime'){
+	if(HIDDEN[q.kind]){
 		$('#sub').innerHTML='<span>ANIME — ???</span>';
 	}else{
 		const subIcon=ANIME_ICON[q.anime]&&ICONS[ANIME_ICON[q.anime]]
@@ -680,6 +745,7 @@ function showQuestion(){
 	}));
 	$('#feedback').textContent='Pick an answer, then reveal.';
 	setAction('REVEAL ANSWER',false);
+	startTimer();
 }
 
 function choose(value){
@@ -690,7 +756,7 @@ function choose(value){
 		const sel=b.dataset.value===value;
 		b.classList.toggle('sel',sel);
 	});
-	$('#feedback').textContent='Locked in: '+value;
+	$('#feedback').textContent='⚡ LOCKED IN: '+value+' ⚡';
 	setAction('REVEAL ANSWER',true);
 }
 
@@ -699,11 +765,32 @@ function onAction(){
 	else if(S.phase==='revealed')nextRound();
 }
 
-function reveal(){
-	if(S.phase!=='pick'||S.selected==null)return;
+function startTimer(){
+	S.timeLeft=TIME_LIMIT;
+	renderTimer();
+	S.timerHandle=setInterval(()=>{
+		if(S.phase!=='pick'){stopTimer();return;}
+		S.timeLeft--;
+		renderTimer();
+		if(S.timeLeft<=0){stopTimer();reveal(true);}
+	},1000);
+}
+function stopTimer(){
+	if(S.timerHandle!=null){clearInterval(S.timerHandle);S.timerHandle=null;}
+}
+function renderTimer(){
+	const el=$('#timer');
+	if(!el)return;
+	el.textContent=S.timeLeft+'s';
+	el.classList.toggle('low',S.timeLeft<=5);
+}
+
+function reveal(timed){
+	if(S.phase!=='pick'||(!timed&&S.selected==null))return;
+	stopTimer();
 	S.phase='revealed';
 	const q=S.q;
-	q._correct=S.selected===q.answer;
+	q._correct=!timed&&S.selected===q.answer;
 	const tier=DATA.tiers[q.tier];
 	[...$('#choices').children].forEach(b=>{
 		const v=b.dataset.value;
@@ -719,7 +806,7 @@ function reveal(){
 		$('#feedback').style.color=MINT;
 	}else{
 		AudioFX.bad();
-		$('#feedback').textContent='Not quite — the answer is: '+q.answer;
+		$('#feedback').textContent=(timed?"TIME'S UP! The answer is: ":'Not quite — the answer is: ')+q.answer;
 		$('#feedback').style.color=CORAL;
 	}
 	const art=$('#art');
@@ -770,6 +857,7 @@ function startConfetti(){
 }
 
 function showWinner(){
+	stopTimer();
 	S.phase='done';
 	document.removeEventListener('keydown',gameKeys);
 	app.innerHTML='';
@@ -777,7 +865,8 @@ function showWinner(){
 	const winners=S.teams.filter((t,i)=>S.scores[i]===S.scores[top]);
 	const isTie=winners.length>1;
 	const wrap=h('div',{class:'winner-wrap fadein'});
-	wrap.append(h('div',{class:'sect-label'},'FINAL SCORE'));
+	wrap.append(h('div',{class:'sect-label'},'★ F I N A L   S C O R E ★'));
+	wrap.append(h('div',{class:'logo-sub'},isTie?'引き分け — DRAW':'優勝 — WINNER'));
 	wrap.append(h('div',{class:'final-title'},isTie?"IT'S A TIE!":winners[0]));
 	wrap.append(h('div',{class:'final-sub'},isTie?winners.join('  vs  ')+' share the crown!':`wins with ${S.scores[top]} point${S.scores[top]===1?'':'s'}!`));
 	const board=h('div',{class:'board'});

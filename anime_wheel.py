@@ -19,6 +19,7 @@ TEAM_COLORS = [CORAL, BLUE, MINT, GOLD]
 DEFAULT_TEAMS = ["TEAM SUN", "TEAM MOON", "TEAM STAR", "TEAM COMET"]
 MIN_ROUNDS = 3
 MAX_ROUNDS = 25
+TIME_LIMIT = 20
 
 TIERS = {
 	"normal": ("NORMAL", BLUE, 1),
@@ -103,6 +104,69 @@ STYLES = {
 	"Kill la Kill": ("鮮", "#c92f4a", "#ff9fb0"),
 	"Psycho-Pass": ("犯", "#2f4858", "#9fd4e8"),
 	"Mobile Suit Gundam": ("赤", "#a83a3a", "#ffb0b0"),
+	"Spice and Wolf": ("穂", "#b8894a", "#f0dcb0"),
+	"Mob Psycho 100": ("%", "#5f3f8f", "#c0a8ff"),
+	"Great Teacher Onizuka": ("鬼", "#c96f1e", "#ffe0a8"),
+	"Mushishi": ("虫", "#5f7f5f", "#cfe8cf"),
+	"Kino's Journey": ("旅", "#8f8f5f", "#e8e8c0"),
+	"Aria the Animation": ("水", "#3a8fa0", "#bde8f0"),
+	"Mononoke": ("薬", "#7a5f9f", "#cfc0ee"),
+	"Ping Pong the Animation": ("拍", "#2f5f8f", "#a8c8e8"),
+	"Kaiba": ("記", "#c96f8f", "#ffd0dd"),
+	"Texhnolyze": ("継", "#4a4a5f", "#b8b8cc"),
+	"Ergo Proxy": ("迷", "#5f5f7f", "#c0c0dc"),
+	"Revolutionary Girl Utena": ("薔", "#c95f8f", "#ffc0da"),
+	"Girls' Last Tour": ("終", "#7f8f9f", "#d0dae0"),
+	"Welcome to the N.H.K.": ("引", "#6f8f6f", "#cfe0cf"),
+	"The Rose of Versailles": ("妃", "#c94f6f", "#ffc0d8"),
+	"Haibane Renmei": ("灰", "#8f8f8f", "#dcdcdc"),
+	"Legend of the Galactic Heroes": ("帝", "#c9a227", "#f0e08a"),
+	"Shouwa Genroku Rakugo Shinjuu": ("落", "#8f5f3a", "#e8cba8"),
+	"Mawaru Penguindrum": ("輪廻", "#e06f8f", "#ffc0d0"),
+	"Yokohama Kaidashi Kikou": ("喫", "#9f7f5f", "#e8d0b8"),
+	"Angel's Egg": ("卵", "#5f5f6f", "#c0c0d0"),
+	"Chuunibyou demo Koi ga Shitai!": ("中二", "#c97fb0", "#ffd0ec"),
+	"Erased": ("戻", "#3a5f7f", "#a8cfe8"),
+	"Juni Taisen: Zodiac War": ("卯", "#c9a227", "#f0e08a"),
+	"Darling in the Franxx": ("竜", "#c94f6f", "#ffb0c0"),
+	"Sirius the Jaeger": ("狼", "#3a5f8f", "#b0cff0"),
+	"Boarding School Juliet": ("寮", "#7f5f9f", "#d8c0f0"),
+	"Baki": ("鬼", "#2f4f6f", "#a8c8e0"),
+	"ID: Invaded": ("名", "#5f3f8f", "#c0b0f0"),
+	"Noblesse": ("貴", "#8f8f5f", "#e0e0a8"),
+	"Un-Go": ("探", "#4f6f4f", "#b8dcb8"),
+	"Vincent": ("聾", "#6f5f4f", "#dcc8b0"),
+	"Kaiju No. 8": ("獣", "#c9521e", "#ffb890"),
+	"Wistoria: Wand and Sword": ("杖", "#3a7f9f", "#a8dce8"),
+	"Alya Sometimes Hides Her Feelings in Russian": ("露", "#c94f5f", "#ffb0ba"),
+	"Toradora!": ("虎", "#e05a6f", "#ffc0c9"),
+	"Eden of the East": ("東", "#3a8f6f", "#a8e0c9"),
+	"Zetman": ("Z", "#4a3f9f", "#b8b0ee"),
+	"Jormungand": ("蛇", "#5f8f2f", "#c8e0a0"),
+	"Gate": ("門", "#b8893a", "#f0dcb0"),
+	"Yamada-kun and the Seven Witches": ("七", "#8f4a7f", "#e0b0d0"),
+	"Kiznaiver": ("絆", "#c95f6f", "#ffc0cc"),
+	"School Days": ("濡", "#5f8fbf", "#c0dcee"),
+	"7SEEDS": ("種", "#2f7f5f", "#a8e0c8"),
+	"Talentless Nana": ("無", "#8f8f9f", "#d8d8e0"),
+	"BTOOOM!": ("爆", "#c96f2f", "#ffd0a0"),
+	"Ron Kamonohashi: Deranged Detective": ("探", "#2f5f8f", "#a8c8e8"),
+	"Lookism": ("貌", "#8f5f8f", "#e0c0e0"),
+	"Ishura": ("競", "#c9a227", "#f0e08a"),
+	"A Sign of Affection": ("手", "#e07f9f", "#ffc8da"),
+	"Suicide Squad Isekai": ("罪", "#c94f8f", "#ffc0e0"),
+	"Zenshu": ("全", "#6f3f9f", "#d0b0f0"),
+	"Devil May Cry": ("魔", "#c93f3f", "#ffb0b0"),
+	"Farmagia": ("農", "#2f8f5f", "#a8e8c8"),
+	"Uglymug": ("丑", "#9f7f2f", "#e8d8a0"),
+	"Teogonia": ("王", "#c9a227", "#f0e08a"),
+	"Fruitmaster": ("果", "#e08a3a", "#ffd8a8"),
+	"Clevatess": ("竜", "#3a7f9f", "#a8dce8"),
+	"Beheneko": ("猫", "#e0a03a", "#ffe0b0"),
+	"Kaya-chan isn't scary": ("恐", "#8f5f5f", "#e0c0c0"),
+	"Darker than Black": ("黒", "#2b2b3d", "#9fb8c9"),
+	"Kill Blue": ("青", "#3a8fae", "#a8dce8"),
+	"Babylon": ("器", "#5a5a6f", "#c0c0d0"),
 }
 
 QUESTIONS = [
@@ -244,7 +308,7 @@ QUOTE_BANK = [
 	 ["Nagato", "Obito Uchiha", "Orochimaru"]),
 	("“A man's dream will never die!”", "Marshall D. Teach", "One Piece", "deep",
 	 ["Monkey D. Luffy", "Portgas D. Ace", "Shanks"]),
-	("“Nothing happened.”", "Roronoa Zoro", "One Piece", "deep",
+	("“Nothing happened.”", "Roronoa Zoro", "One Piece", "boss",
 	 ["Sanji", "Monkey D. Luffy", "Nico Robin"]),
 	("“I want to live! Take me with you to the sea!”", "Nico Robin", "One Piece", "deep",
 	 ["Nami", "Nefertari Vivi", "Franky"]),
@@ -398,6 +462,24 @@ QUOTE_BANK = [
 	 ["Gol D. Roger", "Monkey D. Luffy", "Shanks"]),
 	("“I am the hope of the universe. I am the answer to all living things that cry out for peace. Ally to good… nightmare to you!”", "Son Goku", "Dragon Ball Z", "boss",
 	 ["Vegeta", "Frieza", "Piccolo"]),
+
+	("“Bang.”", "Spike Spiegel", "Cowboy Bebop", "vet",
+	 ["Vicious", "Jet Black", "Faye Valentine"]),
+	("“Believe in yourself. Not in the you who believes in me. Not the me who believes in you. Believe in the you who believes in yourself!”", "Kamina", "Tengen Toppa Gurren Lagann", "vet",
+	 ["Simon", "Yoko Littner", "Lordgenome"]),
+	("“This is the choice of Steins Gate.”", "Okabe Rintaro", "Steins;Gate", "vet",
+	 ["Mayuri Shiina", "Kurisu Makise", "Itaru Hashida"]),
+	("“I am Holo, the Wise Wolf of Yoitsu!”", "Holo", "Spice and Wolf", "vet",
+	 ["Craft Lawrence", "Nora Arendt", "Diana Rubin"]),
+	("“If I sat normally, my reasoning ability would drop by about 40%.”", "L", "Death Note", "vet",
+	 ["Light Yagami", "Near", "Mello"]),
+	("“People die if they are killed!”", "Shirou Emiya", "Fate/stay night", "deep",
+	 ["Archer", "Rin Tohsaka", "Saber"]),
+
+	("“I was born so that I could meet you.”", "Kaworu Nagisa", "Neon Genesis Evangelion", "boss",
+	 ["Shinji Ikari", "Gendo Ikari", "Rei Ayanami"]),
+	("“My treasure? It's right where you'll find it. Go search for it!”", "Gol D. Roger", "One Piece", "boss",
+	 ["Whitebeard", "Monkey D. Luffy", "Silvers Rayleigh"]),
 ]
 
 
@@ -495,6 +577,22 @@ TECH_BANK = [
 	 ["Reiner Braun", "Zeke Yeager", "Erwin Smith"]),
 	("United States of Smash", "All Might", "My Hero Academia", "boss",
 	 ["Izuku Midoriya", "Endeavor", "All For One"]),
+
+	("100-Type Guanyin Bodhisattva", "Isaac Netero", "Hunter x Hunter", "boss",
+	 ["Meruem", "Gon Freecss", "Chrollo Lucilfer"]),
+	("Gold Experience Requiem", "Giorno Giovanna", "JoJo's Bizarre Adventure", "boss",
+	 ["Dio Brando", "Enrico Pucci", "Jotaro Kujo"]),
+	("Giga Slave", "Lina Inverse", "Slayers", "boss",
+	 ["Gourry Gabriev", "Zelgadis Greywords", "Amelia Wil Tesla Saillune"]),
+
+	("Excalibur", "Saber", "Fate/stay night", "vet",
+	 ["Gilgamesh", "Archer", "Lancer"]),
+	("Tiro Finale", "Mami Tomoe", "Puella Magi Madoka Magica", "vet",
+	 ["Madoka Kaname", "Homura Akemi", "Sayaka Miki"]),
+	("Crazy Slots", "Kite", "Hunter x Hunter", "vet",
+	 ["Gon Freecss", "Killua Zoldyck", "Ging Freecss"]),
+	("Six Paths Sage Mode", "Naruto Uzumaki", "Naruto Shippuden", "vet",
+	 ["Sasuke Uchiha", "Madara Uchiha", "Hagoromo Otsutsuki"]),
 ]
 
 
@@ -575,6 +673,184 @@ ANIME_BANK = [
 
 	("Unlimited Blade Works — 'I am the bone of my sword…'", "Fate/stay night", "boss",
 	 ["Bleach", "Rurouni Kenshin", "Demon Slayer"]),
+
+	("The Band of the Hawk and the fateful Eclipse", "Berserk", "vet",
+	 ["Claymore", "Attack on Titan", "Devilman"]),
+	("A middle-school esper who represses his power at exactly ???%", "Mob Psycho 100", "vet",
+	 ["One Punch Man", "Jujutsu Kaisen", "My Hero Academia"]),
+	("An ex-biker gang leader becomes Japan's most unorthodox homeroom teacher", "Great Teacher Onizuka", "vet",
+	 ["Slam Dunk", "Gintama", "The Prince of Tennis"]),
+	("Mushi — primitive lifeforms drifting between this world and the next", "Mushishi", "vet",
+	 ["Natsume's Book of Friends", "Mononoke", "Frieren: Beyond Journey's End"]),
+	("A traveler and her talking motorcycle visit countries, three days each", "Kino's Journey", "vet",
+	 ["Girls' Last Tour", "Mushishi", "Spice and Wolf"]),
+	("Undine gondoliers giving tours on terraformed Mars, in Neo-Venezia", "Aria the Animation", "vet",
+	 ["Kino's Journey", "Yokohama Kaidashi Kikou", "Girls' Last Tour"]),
+	("A medicine seller exorcises mononoke with a sword, scales, and mirror", "Mononoke", "vet",
+	 ["Mushishi", "Hell Girl", "Monogatari Series"]),
+	("Table tennis rivals drawn in Masaaki Yuasa's wildest brushwork", "Ping Pong the Animation", "vet",
+	 ["Haikyuu!!", "Slam Dunk", "Kuroko's Basketball"]),
+	("A boy with a hole in his chest searches for memories on a strange planet", "Kaiba", "vet",
+	 ["Serial Experiments Lain", "Texhnolyze", "Ergo Proxy"]),
+	("Lux: an underground city where the poor trade flesh for cybernetic limbs", "Texhnolyze", "vet",
+	 ["Ergo Proxy", "Psycho-Pass", "Blame!"]),
+	("Detectives chase Proxy corpses beneath dome-city Romdo", "Ergo Proxy", "vet",
+	 ["Texhnolyze", "Psycho-Pass", "Ghost in the Shell"]),
+	("A rose bride is fought over in duels atop Ohtori Academy", "Revolutionary Girl Utena", "vet",
+	 ["Sailor Moon", "Puella Magi Madoka Magica", "Ouran High School Host Club"]),
+	("Two girls wander a dead megacity on a Kettenkrad half-track", "Girls' Last Tour", "vet",
+	 ["Yokohama Kaidashi Kikou", "Made in Abyss", "Kino's Journey"]),
+	("A hikikomori blames a shadowy organization for his shut-in life", "Welcome to the N.H.K.", "vet",
+	 ["Neon Genesis Evangelion", "Great Teacher Onizuka", "Monster"]),
+	("Oscar leads the royal guards as France slides toward revolution", "The Rose of Versailles", "vet",
+	 ["Vinland Saga", "Revolutionary Girl Utena", "Code Geass"]),
+	("Charcoal-winged angels hatch from cocoons inside a walled town", "Haibane Renmei", "vet",
+	 ["Angel's Egg", "Girls' Last Tour", "Serial Experiments Lain"]),
+
+	("Reinhard vs Yang Wen-li across a thousand years of star wars", "Legend of the Galactic Heroes", "boss",
+	 ["Mobile Suit Gundam", "Code Geass", "The Rose of Versailles"]),
+	("An entire career of a rakugo storyteller, from orphan to stage legend", "Shouwa Genroku Rakugo Shinjuu", "boss",
+	 ["Mononoke", "Ping Pong the Animation", "The Tatami Galaxy"]),
+	("A penguin hat demands survival ratings to rewrite fate", "Mawaru Penguindrum", "boss",
+	 ["Revolutionary Girl Utena", "Neon Genesis Evangelion", "Puella Magi Madoka Magica"]),
+	("An android runs a roadside café after humanity quietly fades away", "Yokohama Kaidashi Kikou", "boss",
+	 ["Girls' Last Tour", "Aria the Animation", "Mushishi"]),
+	("The Human Instrumentality Project", "Neon Genesis Evangelion", "boss",
+	 ["Mobile Suit Gundam", "Serial Experiments Lain", "Ergo Proxy"]),
+	("A girl cradles an egg through a dead city in Oshii's wordless fever dream", "Angel's Egg", "boss",
+	 ["Haibane Renmei", "Serial Experiments Lain", "Texhnolyze"]),
+]
+
+
+# (character, anime, tier, [3 wrong characters]) — "Who's That Character?" silhouettes
+CHAR_BANK = [
+	("Son Goku", "Dragon Ball", "normal",
+	 ["Vegeta", "Gohan", "Yamcha"]),
+	("Saitama", "One Punch Man", "normal",
+	 ["Genos", "Garou", "Sonic"]),
+	("Pikachu", "Pokémon", "normal",
+	 ["Jigglypuff", "Eevee", "Charmander"]),
+	("Ash Ketchum", "Pokémon", "normal",
+	 ["Red", "Brock", "Misty"]),
+	("Monkey D. Luffy", "One Piece", "normal",
+	 ["Roronoa Zoro", "Portgas D. Ace", "Sanji"]),
+	("Naruto Uzumaki", "Naruto", "normal",
+	 ["Sasuke Uchiha", "Minato Namikaze", "Jiraiya"]),
+	("Ichigo Kurosaki", "Bleach", "normal",
+	 ["Rukia Kuchiki", "Renji Abarai", "Orihime Inoue"]),
+	("Gon Freecss", "Hunter x Hunter", "normal",
+	 ["Killua Zoldyck", "Leorio Paradinight", "Kurapika"]),
+	("Anya Forger", "Spy × Family", "normal",
+	 ["Loid Forger", "Yor Forger", "Bond Forger"]),
+
+	("Vegeta", "Dragon Ball Z", "medium",
+	 ["Son Goku", "Trunks", "Piccolo"]),
+	("Tanjiro Kamado", "Demon Slayer", "medium",
+	 ["Nezuko Kamado", "Zenitsu Agatsuma", "Inosuke Hashibira"]),
+	("Nezuko Kamado", "Demon Slayer", "medium",
+	 ["Tanjiro Kamado", "Shinobu Kocho", "Kanao Tsuyuri"]),
+	("Sasuke Uchiha", "Naruto Shippuden", "medium",
+	 ["Naruto Uzumaki", "Itachi Uchiha", "Kakashi Hatake"]),
+	("Killua Zoldyck", "Hunter x Hunter", "medium",
+	 ["Gon Freecss", "Illumi Zoldyck", "Hisoka Morow"]),
+	("Eren Yeager", "Attack on Titan", "medium",
+	 ["Levi Ackerman", "Armin Arlert", "Mikasa Ackerman"]),
+	("Spike Spiegel", "Cowboy Bebop", "medium",
+	 ["Jet Black", "Vicious", "Ein"]),
+	("L (Lawliet)", "Death Note", "medium",
+	 ["Light Yagami", "Near", "Mello"]),
+	("Roronoa Zoro", "One Piece", "medium",
+	 ["Monkey D. Luffy", "Sanji", "Trafalgar Law"]),
+	("Satoru Gojo", "Jujutsu Kaisen", "medium",
+	 ["Suguru Geto", "Yuji Itadori", "Ryomen Sukuna"]),
+	("Sakata Gintoki", "Gintama", "medium",
+	 ["Kotaro Katsura", "Shinsuke Takasugi", "Shinpachi Shimura"]),
+	("Sung Jinwoo", "Solo Leveling", "medium",
+	 ["Baek Yoonho", "Cha Hae-In", "Igris"]),
+	("Light Yagami", "Death Note", "deep",
+	 ["L (Lawliet)", "Near", "Misa Amane"]),
+	("Itachi Uchiha", "Naruto Shippuden", "deep",
+	 ["Sasuke Uchiha", "Kakashi Hatake", "Madara Uchiha"]),
+	("Jotaro Kujo", "JoJo's Bizarre Adventure", "deep",
+	 ["Joseph Joestar", "Josuke Higashikata", "Giorno Giovanna"]),
+	("Levi Ackerman", "Attack on Titan", "deep",
+	 ["Eren Yeager", "Zeke Yeager", "Kenny Ackerman"]),
+	("Lelouch vi Britannia", "Code Geass", "deep",
+	 ["Suzaku Kururugi", "Shirley Fenette", "C.C."]),
+	("Guts", "Berserk", "deep",
+	 ["Griffith", "Casca", "Serpico"]),
+
+	("All Might", "My Hero Academia", "deep",
+	 ["Izuku Midoriya", "Endeavor", "All For One"]),
+	("Izuku Midoriya", "My Hero Academia", "deep",
+	 ["Katsuki Bakugo", "Shoto Todoroki", "All Might"]),
+	("Katsuki Bakugo", "My Hero Academia", "deep",
+	 ["Izuku Midoriya", "Eijiro Kirishima", "Shoto Todoroki"]),
+]
+
+
+# (anime, prompt, answer, [3 wrong answers], tier) — general trivia (Batch 1)
+FACT_BANK = [
+	("Kino's Journey", "What is the strict self-imposed rule Kino follows about staying in any single country?",
+	 "Never stay longer than three days",
+	 ["Exactly one week", "Until supplies run out", "Until the weather changes"], "normal"),
+	("Tengen Toppa Gurren Lagann", "What tool does Simon use?",
+	 "A drill",
+	 ["A hammer", "Knucklebusters", "He uses no tools"], "normal"),
+	("Chuunibyou demo Koi ga Shitai!", "What embarrassing chuunibyou persona did Yuuta Togashi go by in middle school?",
+	 "Dark Flame Master",
+	 ["Shadow Monarch", "Knight of the Midnight Abyss", "Infernal Dragon Lord"], "normal"),
+	("JoJo's Bizarre Adventure", "Who is the 3rd JoJo?",
+	 "Jotaro Kujo",
+	 ["Joseph Joestar", "Johnathan Joestar", "Josuke Higashikata"], "medium"),
+	("Re:Zero", "How many witches are there?",
+	 "Seven",
+	 ["Twelve", "Thirteen", "Nine"], "medium"),
+	("Erased", "What is the official name of Satoru Fujinuma's involuntary time-travel phenomenon?",
+	 "Revival",
+	 ["Time Leap", "Chrono-shift", "Backtrack"], "medium"),
+	("Juni Taisen: Zodiac War", "How many Junni Taisen contestants are there?",
+	 "Twelve",
+	 ["Six", "Thirteen", "Nine"], "medium"),
+	("Darling in the Franxx", "What is the protagonist boys' code name?",
+	 "Hiro",
+	 ["Zero Two", "Ichigo", "Goro"], "medium"),
+	("Sirius the Jaeger", "Which creature is the title 'Sirius the ___'?",
+	 "Jaeger",
+	 ["Reiga", "Siran", "Eren"], "deep"),
+	("Boarding School Juliet", "What is the heroine's name in the boarding-school rom-com?",
+	 "Juliet",
+	 ["Anya", "Yuki", "Jane"], "medium"),
+	("Baki", "What is Yujiro Hanma's infamous moniker that strikes fear worldwide?",
+	 "The Ogre",
+	 ["The Dragon of Dojima", "The Demon King", "The Unbeaten Fist"], "vet"),
+	("Babylon", "What is Inspector Zen Seizaki's occupation at the start of the series?",
+	 "Public prosecutor",
+	 ["Private detective", "Interpol agent", "Forensic pathologist"], "deep"),
+	("ID: Invaded", "What is the strict, mandatory requirement to pilot the Mizuhanome and enter an ID Well?",
+	 "Must be a convicted murderer",
+	 ["Licensed neurosurgeon", "Clean criminal record", "Innate psychic powers"], "vet"),
+	("Noblesse", "What unique title does Cadis Etrama Di Raizel hold that sets him apart from other Nobles?",
+	 "The Noblesse",
+	 ["Lord of the Nobles", "First Elder of the Union", "Master of Lukedonia"], "vet"),
+	("Un-Go", "How does Totomaru Isshiki enable Ron to solve cases without triggering his dark compulsion?",
+	 "Toto takes official credit for the deductions",
+	 ["Toto does all fieldwork", "Toto hypnotizes suspects", "Toto poses as Ron's lawyer"], "deep"),
+	("Vincent", "What is the protagonist's main disability in this anime?",
+	 "Can't hear",
+	 ["Can't walk", "Can't speak", "Can't feel"], "normal"),
+	("Kaiju No. 8", "How does Kafka Hibino initially ingest the parasitic kaiju that grants his powers?",
+	 "It flies into his mouth while he is hospitalized",
+	 ["It bites him on the job", "He inhales its spores", "He swallows it in a capsule"], "medium"),
+	("Wistoria: Wand and Sword", "What is the name of the magical academy?",
+	 "Rigarden Magical Academy",
+	 ["Wistoria Magical Academy", "Kimberly Magical Academy", "Hogwarts"], "deep"),
+	("Alya Sometimes Hides Her Feelings in Russian", "In what language does the heroine hide her feelings?",
+	 "Russian",
+	 ["Japanese", "English", "Korean"], "normal"),
+	("One Punch Man", "How many hero associations have members in the top ten?",
+	 "Four",
+	 ["Three", "Two", "Six"], "medium"),
 ]
 
 
@@ -582,6 +858,8 @@ QUESTION_HEADERS = {
 	"line": "WHO SAYS IT?",
 	"tech": "NAME THAT MOVE",
 	"anime": "NAME THAT SERIES",
+	"who": "WHO'S THAT CHARACTER?",
+	"fact": "TRIVIA TIME",
 }
 
 
@@ -626,6 +904,32 @@ for entry in QUESTIONS:
 	entry.setdefault("tier", "normal")
 
 
+def _expand_chars():
+	for who, anime, tier, distractors in CHAR_BANK:
+		symbol, c1, c2 = STYLES[anime]
+		QUESTIONS.append({
+			"anime": anime, "prompt": "Identify this character from their silhouette!",
+			"answer": who, "choices": [who] + list(distractors[:3]),
+			"kind": "who", "symbol": symbol, "colors": (c1, c2), "tier": tier,
+		})
+
+
+_expand_chars()
+
+
+def _expand_facts():
+	for anime, prompt, answer, distractors, tier in FACT_BANK:
+		symbol, c1, c2 = STYLES[anime]
+		QUESTIONS.append({
+			"anime": anime, "prompt": prompt, "answer": answer,
+			"choices": [answer] + list(distractors[:3]),
+			"kind": "fact", "symbol": symbol, "colors": (c1, c2), "tier": tier,
+		})
+
+
+_expand_facts()
+
+
 def shade(color, factor):
 	color = color.lstrip("#")
 	r, g, b = (int(color[i:i + 2], 16) for i in (0, 2, 4))
@@ -651,6 +955,8 @@ class AnimeWheel:
 		self.phase = "idle"
 		self.selected = None
 		self.art_text = ""
+		self.timer_job = None
+		self.timer_seconds = TIME_LIMIT
 		self.show_setup()
 
 	def clear(self):
@@ -683,7 +989,7 @@ class AnimeWheel:
 		wrap = tk.Frame(self.root, bg=BG)
 		wrap.pack(fill="both", expand=True, padx=70, pady=40)
 		self.label(wrap, "ANIME WHEEL", 44, CORAL, weight="bold").pack(anchor="w")
-		self.label(wrap, f"SPIN  •  GUESS  •  SCORE      {len(QUESTIONS)} CHALLENGES ACROSS {len(STYLES)} SHOWS",
+		self.label(wrap, f"アニメ・ホイール  •  SPIN  •  GUESS  •  SCORE      {len(QUESTIONS)} CHALLENGES ACROSS {len(STYLES)} SHOWS",
 				   13, GOLD, weight="bold").pack(anchor="w", pady=(2, 26))
 
 		card = tk.Frame(wrap, bg=PANEL, padx=32, pady=26, highlightbackground=BORDER, highlightthickness=1)
@@ -816,8 +1122,12 @@ class AnimeWheel:
 		right = tk.Frame(body, bg=BG, width=540)
 		right.pack(side="right", fill="both")
 		right.pack_propagate(False)
-		self.tier_chip = self.label(right, "", 11, GOLD, weight="bold")
-		self.tier_chip.pack(anchor="w", pady=(0, 4))
+		meta = tk.Frame(right, bg=BG)
+		meta.pack(anchor="w", fill="x", pady=(0, 4))
+		self.tier_chip = self.label(meta, "", 11, GOLD, weight="bold")
+		self.tier_chip.pack(side="left")
+		self.timer_label = self.label(meta, "", 11, GOLD, weight="bold")
+		self.timer_label.pack(side="right")
 		self.prompt = self.label(right, "", 15, INK, weight="bold", wraplength=520, justify="left")
 		self.prompt.pack(anchor="w", pady=(0, 6))
 		self.subtitle = self.label(right, "", 12, MUTED, justify="left")
@@ -863,6 +1173,7 @@ class AnimeWheel:
 		if self.round_number >= self.rounds:
 			self.show_winner()
 			return
+		self._cancel_timer()
 		self.round_number += 1
 		self.question = self.draw_question()
 		self.phase = "spin"
@@ -894,7 +1205,7 @@ class AnimeWheel:
 		self.phase = "pick"
 		question = self.question
 		tier_name, tier_color, pts = TIERS[question["tier"]]
-		if question["kind"] == "anime":
+		if question["kind"] in ("anime", "who"):
 			self.art_text = "?"
 			self.flash_colors = ("#2b2b3d", "#8f97b5")
 			self.draw_art()
@@ -904,7 +1215,7 @@ class AnimeWheel:
 		self.tier_chip.configure(text=f"{tier_name}  •  +{pts} POINT{'S' if pts != 1 else ''}", fg=tier_color)
 		header = QUESTION_HEADERS.get(question["kind"], "SYMBOL ROUND")
 		self.prompt.configure(text=f"{header}\n{question['prompt']}")
-		if question["kind"] in ("line", "character"):
+		if question["kind"] in ("line", "character", "fact"):
 			self.subtitle.configure(text=f"🎬  {question['anime']}")
 		choices = question["choices"][:]
 		random.shuffle(choices)
@@ -919,6 +1230,7 @@ class AnimeWheel:
 			self.choice_buttons.append(btn)
 		self.feedback.configure(text="Pick an answer, then reveal.", fg=MUTED)
 		self.set_action("REVEAL ANSWER", False)
+		self.start_timer()
 
 	def choose(self, choice):
 		if self.phase != "pick":
@@ -936,18 +1248,47 @@ class AnimeWheel:
 			bg=GOLD if enabled else BORDER, fg=DARK_INK if enabled else MUTED,
 			disabledforeground=MUTED, activebackground=shade(GOLD, .82) if enabled else BORDER)
 
+	def start_timer(self):
+		self._cancel_timer()
+		self.timer_seconds = TIME_LIMIT
+		self._show_timer()
+		self.timer_job = self.root.after(1000, self._tick_timer)
+
+	def _tick_timer(self):
+		self.timer_job = None
+		if self.phase != "pick":
+			return
+		self.timer_seconds -= 1
+		self._show_timer()
+		if self.timer_seconds <= 0:
+			self.reveal_answer(timed_out=True)
+			return
+		self.timer_job = self.root.after(1000, self._tick_timer)
+
+	def _show_timer(self):
+		if not hasattr(self, "timer_label"):
+			return
+		color = GOLD if self.timer_seconds > 5 else CORAL
+		self.timer_label.configure(text=f"⏱  {self.timer_seconds}s", fg=color)
+
+	def _cancel_timer(self):
+		if self.timer_job is not None:
+			self.root.after_cancel(self.timer_job)
+			self.timer_job = None
+
 	def on_action(self):
 		if self.phase == "pick" and self.selected is not None:
 			self.reveal_answer()
 		elif self.phase == "revealed":
 			self.next_round()
 
-	def reveal_answer(self, _event=None):
-		if self.phase != "pick" or self.selected is None:
+	def reveal_answer(self, _event=None, timed_out=False):
+		if self.phase != "pick" or (not timed_out and self.selected is None):
 			return
+		self._cancel_timer()
 		self.phase = "revealed"
 		answer = self.question["answer"]
-		correct = self.selected == answer
+		correct = not timed_out and self.selected == answer
 		for btn, value in zip(self.choice_buttons, self.choice_values):
 			if value == answer:
 				btn.configure(bg=MINT, fg=DARK_INK, state="disabled", disabledforeground=DARK_INK)
@@ -955,11 +1296,14 @@ class AnimeWheel:
 				btn.configure(bg=CORAL, fg="white", state="disabled", disabledforeground="white")
 			else:
 				btn.configure(bg=PANEL, fg=MUTED, state="disabled", disabledforeground=MUTED)
+		self.timer_label.configure(text="")
 		team = self.teams[self.current_team]
 		_, _, pts = TIERS[self.question["tier"]]
 		if correct:
 			self.scores[team] += pts
 			self.feedback.configure(text=f"CORRECT!  +{pts} point{'s' if pts != 1 else ''} for {team}", fg=MINT)
+		elif timed_out:
+			self.feedback.configure(text=f"TIME'S UP! The answer is: {answer}", fg=CORAL)
 		else:
 			self.feedback.configure(text=f"Not quite — the answer is: {answer}", fg=CORAL)
 		self.draw_art()
@@ -977,7 +1321,7 @@ class AnimeWheel:
 		height = max(canvas.winfo_height(), 300)
 		if self.phase == "spin":
 			colors = getattr(self, "flash_colors", (CORAL, GOLD))
-		elif self.question and self.question["kind"] == "anime" and self.phase != "revealed":
+		elif self.question and self.question["kind"] in ("anime", "who") and self.phase != "revealed":
 			colors = ("#2b2b3d", "#8f97b5")
 		elif self.question:
 			colors = self.question["colors"]
@@ -999,7 +1343,7 @@ class AnimeWheel:
 							   font=("Segoe UI Symbol", max(24, int(size * .22)), "bold"))
 			return
 
-		mode = "emblem" if self.question and self.question["kind"] in ("symbol", "anime") else "avatar"
+		mode = "emblem" if self.question and self.question["kind"] in ("symbol", "anime", "who", "fact") else "avatar"
 		correct = self.phase == "revealed" and self.selected == self.question["answer"]
 		wrong = self.phase == "revealed" and not correct
 		ring = MINT if correct else CORAL if wrong else None
@@ -1042,8 +1386,10 @@ class AnimeWheel:
 		canvas.create_text(cx, cy, text=self.art_text, fill=c2,
 						   font=("Segoe UI Symbol", max(28, int(mid * .95)), "bold"))
 		if self.phase == "pick":
-			caption = "MYSTERY SERIES — NO HINTS HIDDEN IN THE ART!" \
-				if self.question and self.question["kind"] == "anime" \
+			kind = self.question["kind"] if self.question else None
+			caption = "MYSTERY SERIES — NO HINTS HIDDEN IN THE ART!" if kind == "anime" \
+				else "WHO'S THAT CHARACTER? — NO HINTS!" if kind == "who" \
+				else "THIS SERIES IS THE SUBJECT OF THE TRIVIA" if kind == "fact" \
 				else "WHAT DOES THIS EMBLEM BELONG TO?"
 			canvas.create_text(cx, cy + mid + 24, text=caption,
 							   fill=MUTED, font=("Segoe UI", 9, "bold"))
@@ -1120,8 +1466,9 @@ class AnimeWheel:
 			title, subtitle = winners[0], f"wins with {top} point{'s' if top != 1 else ''}!"
 		wrap = tk.Frame(self.root, bg=BG)
 		wrap.pack(fill="both", expand=True, padx=90, pady=60)
-		self.label(wrap, "FINAL SCORE", 15, GOLD, weight="bold").pack(anchor="w")
-		self.label(wrap, title, 42, CORAL, weight="bold").pack(anchor="w", pady=(8, 0))
+		self.label(wrap, "★ FINAL SCORE ★", 15, GOLD, weight="bold").pack(anchor="w")
+		self.label(wrap, "優勝 WINNER!" if len(winners) == 1 else "引き分け DRAW!", 13, MINT, weight="bold").pack(anchor="w", pady=(10, 0))
+		self.label(wrap, title, 42, CORAL, weight="bold").pack(anchor="w", pady=(4, 0))
 		self.label(wrap, subtitle, 20, INK).pack(anchor="w")
 		board = tk.Frame(wrap, bg=PANEL, padx=26, pady=16, highlightbackground=BORDER, highlightthickness=1)
 		board.pack(fill="x", pady=26)
